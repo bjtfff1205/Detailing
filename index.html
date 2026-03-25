@@ -6,6 +6,62 @@
     <title>Theis Auto Detailing</title>
 
     <style>
+            /* Responsive styles */
+            @media (max-width: 700px) {
+              header {
+                font-size: 32px;
+                padding: 10px;
+              }
+              header p {
+                font-size: 16px;
+              }
+              .hero {
+                padding: 40px 5px;
+                min-height: 30vh;
+              }
+              .hero h1 {
+                font-size: 28px;
+              }
+              .hero p {
+                font-size: 14px;
+              }
+              .text {
+                padding: 20px;
+                border-radius: 40px;
+                max-width: 95vw;
+              }
+              .section {
+                padding: 30px 5px;
+              }
+              .services {
+                flex-direction: column;
+                gap: 15px;
+              }
+              .servicecard {
+                width: 95vw;
+                max-width: 350px;
+                margin: 0 auto;
+              }
+              img {
+                max-width: 100%;
+                height: auto;
+              }
+              .footer {
+                flex-direction: column;
+                gap: 20px;
+              }
+              .area {
+                flex-direction: column;
+              }
+              .card {
+                font-size: 14px;
+                padding: 10px;
+              }
+              .btn {
+                padding: 10px 15px;
+                font-size: 14px;
+              }
+            }
       body {
         margin: 0;
         font-family: Arial, sans-serif;
@@ -44,6 +100,17 @@
         color: #f2f6ff;
       }
 
+      .text {
+        background-color: #02050f80;
+        max-width: fit-content;
+        padding: 50px;
+        border-radius: 200px;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+      }
+
       .btn {
         margin-top: 15px;
         padding: 15px 25px;
@@ -73,7 +140,7 @@
         gap: 20px;
       }
 
-      .card {
+      .servicecard {
         background: #1457ff;
         padding: 20px;
         border-radius: 10px;
@@ -119,6 +186,71 @@
       .social a:hover {
         color: #37b4ff;
       }
+
+      .area {
+        display: flex;
+        padding: 0;
+
+        ul {
+          list-style-type: none;
+        }
+      }
+
+      .price {
+        font-weight: bold;
+        text-decoration: underline;
+      }
+
+      .gallery {
+        text-align: center;
+        overflow: hidden;
+      }
+
+      .testimonials {
+        overflow: hidden;
+        background: #f9f9f9;
+        padding: 30px 0;
+      }
+
+      .track {
+        display: flex;
+        width: max-content;
+        animation: scroll 25s linear infinite;
+        gap: 20px;
+      }
+
+      .track image {
+        width: fit-content;
+        padding: 0;
+        margin: 0;
+        display: block;
+      }
+
+      .card {
+        flex: 0 0 300px;
+        margin: 0 15px;
+        padding: 20px;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        font-size: 16px;
+        color: #1457ff;
+      }
+
+      /* scrolling animation */
+      @keyframes scroll {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-50%);
+        }
+      }
+
+      /* pause on hover */
+      .testimonials:hover .track {
+        animation-play-state: paused;
+      }
     </style>
   </head>
 
@@ -126,19 +258,23 @@
     <header>
       Theis Auto Detailing
       <p>Clean Cars, Clear Standards</p>
+
+      <div class="links">
+        <button class="btn" onclick="scrollToQuote()">Get a Quote</button>
+
+        <a href="tel:4193069680">
+          <button class="btn">Call Now</button>
+        </a>
+
+        <button class="btn" onclick="scrollToGallery()">Gallery</button>
+      </div>
     </header>
 
     <section class="hero">
-      <h1>We Come To You</h1>
-      <p>Professional Auto Detailing in Your Driveway</p>
-
-      <button class="btn" onclick="scrollToQuote()">Get a Quote</button>
-
-      <br />
-
-      <a href="tel:4193069680">
-        <button class="btn">Call Now</button>
-      </a>
+      <div class="text">
+        <h1>We Come To You</h1>
+        <p>Professional Auto Detailing in Your Driveway</p>
+      </div>
     </section>
 
     <section class="section">
@@ -146,7 +282,7 @@
       <p>Prices vary on vehicle size and condition</p>
 
       <div class="services">
-        <div class="card">
+        <div class="servicecard">
           <img src="Images/exterior.jpg" alt="Exterior Detail" />
           <h3>Exterior Detail</h3>
           <p>
@@ -165,35 +301,35 @@
           </p>
         </div>
 
-        <div class="card">
+        <div class="servicecard">
           <img src="Images/interior.jpg" alt="Interior Detail" />
           <h3>Interior Detail</h3>
           <p>
-            Basic Interior: <br />
+            <span class="price">Basic Interior: </span><br />
             Includes <br />
             <br />
             <span class="price"> $120-$160 </span>
           </p>
           <p>
-            Advanced Interior: <br />
+            <span class="price">Advanced Interior:</span> <br />
             Includes the basic package and <br />
             <br />
             <span class="price"> $160-$200 </span>
           </p>
         </div>
 
-        <div class="card">
+        <div class="servicecard">
           <img src="Images/full.jpg" alt="Full Detail" />
           <h3>Full Detail</h3>
           <p>
-            Basic Full Detail: <br />
+            <span class="price"> Basic Full Detail: </span> <br />
             Includes all previously listed basic benefits for a discounted price
             <br />
             <br />
             <span class="price"> $180-$220 </span>
           </p>
           <p>
-            Advanced Full Detail: <br />
+            <span class="price"> Advanced Full Detail:</span> <br />
             Includes all previously listed advanced benefits for a discounted
             price <br />
             <br />
@@ -213,6 +349,19 @@
       </p>
     </section>
 
+    <section class="gallery" id="gallery">
+      <h1>Gallery</h1>
+      <div class="track">
+        <image src="Images/exterior.jpg" />
+        <image src="Images/full.jpg" />
+        <image src="Images/exterior.jpg" />
+        <image src="Images/full.jpg" />
+        <image src="Images/interior.jpg" />
+        <image src="Images/full.jpg" />
+        <image src="Images/interior.jpg" />
+      </div>
+    </section>
+
     <section class="section" id="quote">
       <h2>Get a Free Quote</h2>
 
@@ -222,7 +371,12 @@
         method="POST"
       >
         <input type="text" name="Name" placeholder="Your Name" required />
-        <input type="text" name="Vehicle" placeholder="Make and Model of Vehicle" required />
+        <input
+          type="text"
+          name="Vehicle"
+          placeholder="Make and Model of Vehicle"
+          required
+        />
         <input type="tel" name="Phone" placeholder="Phone Number" required />
         <input type="text" name="Location" placeholder="Location" required />
         <select name="Service" id="service">
@@ -242,6 +396,20 @@
         <button class="btn">Submit</button>
       </form>
     </section>
+    <section class="testimonials">
+      <div class="track">
+        <div class="card">"Amazing service!" — John</div>
+        <div class="card">"Loved the experience." — Sarah</div>
+        <div class="card">"Highly recommend!" — Mike</div>
+        <div class="card">"Five stars!" — Emily</div>
+
+        <!-- duplicate for seamless loop -->
+        <div class="card">"Amazing service!" — John</div>
+        <div class="card">"Loved the experience." — Sarah</div>
+        <div class="card">"Highly recommend!" — Mike</div>
+        <div class="card">"Five stars!" — Emily</div>
+      </div>
+    </section>
 
     <footer>
       <div class="footer">
@@ -252,9 +420,38 @@
           <p><a href="https://www.tiktok.com">TikTok</a></p>
         </div>
         <div class="contact">
-            <h3>Contact Info</h3>
-            <p>Phone: 555-555-5555</p>
-            <P>Email: detail@gmail.com</P>
+          <h3>Contact Info</h3>
+          <p>Phone: 555-555-5555</p>
+          <p>Email: detail@gmail.com</p>
+        </div>
+        <div>
+          <h3>Service Areas Northwest Ohio</h3>
+          <div class="area">
+            <ul class="hancock">
+              <h4>Hancock County</h4>
+              <li>Findlay</li>
+              <li>McComb</li>
+              <li>Van Buren</li>
+              <li>Arlington</li>
+              <li>ETC</li>
+            </ul>
+            <ul>
+              <h4>Hardin County</h4>
+              <li>Kenton</li>
+              <li>Ada</li>
+              <li>Dunkirk</li>
+              <li>Forest</li>
+              <li>ETC</li>
+            </ul>
+            <ul>
+              <h4>Wood County</h4>
+              <li>Bowling Green</li>
+              <li>North Baltimore</li>
+              <li>Perrysburg</li>
+              <li>Fostoria</li>
+              <li>ETC</li>
+            </ul>
+          </div>
         </div>
       </div>
       © 2026 Theis Auto Detailing | Mobile Detailing
@@ -263,6 +460,11 @@
     <script>
       function scrollToQuote() {
         document.getElementById("quote").scrollIntoView({ behavior: "smooth" });
+      }
+      function scrollToGallery() {
+        document
+          .getElementById("gallery")
+          .scrollIntoView({ behavior: "smooth" });
       }
     </script>
   </body>
