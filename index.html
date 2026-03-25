@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Theis Auto Detailing</title>
+
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #05070d;
+        color: #f2f6ff;
+      }
+
+      header {
+        background: #02050f;
+        padding: 20px;
+        text-align: center;
+        font-size: 60px;
+        font-weight: bold;
+
+        p {
+          font-size: 24px;
+        }
+      }
+
+      .hero {
+        padding: 80px 20px;
+        text-align: center;
+        background-image: url("Images/bluecar.jpg");
+        background-position: 0%;
+        background-size: cover;
+        min-height: 50vh;
+      }
+
+      .hero h1 {
+        font-size: 42px;
+        margin-bottom: 10px;
+      }
+
+      .hero p {
+        font-size: 18px;
+        color: #f2f6ff;
+      }
+
+      .btn {
+        margin-top: 15px;
+        padding: 15px 25px;
+        background: #1457ff;
+        border: 2px solid #37b4ff;
+        color: #f2f6ff;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+
+      .btn:hover {
+        border: 2px solid #37b4ff;
+        background-color: #f2f6ff;
+        color: #1457ff;
+      }
+
+      .section {
+        padding: 60px 20px;
+        text-align: center;
+      }
+
+      .services {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      .card {
+        background: #1457ff;
+        padding: 20px;
+        border-radius: 10px;
+        width: 300px;
+      }
+
+      .form {
+        max-width: 400px;
+        margin: auto;
+      }
+
+      input,
+      select {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: none;
+        border-radius: 5px;
+      }
+      .footer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10%;
+      }
+
+      footer {
+        background: #05070d;
+        padding: 20px;
+        text-align: center;
+        font-size: 14px;
+      }
+
+      img {
+        max-width: 300px;
+      }
+
+      .social a {
+        color: #1457ff;
+        text-decoration: none;
+      }
+
+      .social a:hover {
+        color: #37b4ff;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      Theis Auto Detailing
+      <p>Clean Cars, Clear Standards</p>
+    </header>
+
+    <section class="hero">
+      <h1>We Come To You</h1>
+      <p>Professional Auto Detailing in Your Driveway</p>
+
+      <button class="btn" onclick="scrollToQuote()">Get a Quote</button>
+
+      <br />
+
+      <a href="tel:4193069680">
+        <button class="btn">Call Now</button>
+      </a>
+    </section>
+
+    <section class="section">
+      <h2>Our Services</h2>
+      <p>Prices vary on vehicle size and condition</p>
+
+      <div class="services">
+        <div class="card">
+          <img src="Images/exterior.jpg" alt="Exterior Detail" />
+          <h3>Exterior Detail</h3>
+          <p>
+            Basic Exterior: <br />
+            Includes spray prewash, hand wash and dry, stubborn bug removal,
+            tire shine application, wheel shine. <br />
+            <br />
+            <span class="price"> $80-$120 </span>
+          </p>
+          <p>
+            Advanced Exterior: <br />
+            Includes the basic package with plastic revitalization a wax and
+            polish finish <br />
+            <br />
+            <span class="price"> $120-$160 </span>
+          </p>
+        </div>
+
+        <div class="card">
+          <img src="Images/interior.jpg" alt="Interior Detail" />
+          <h3>Interior Detail</h3>
+          <p>
+            Basic Interior: <br />
+            Includes <br />
+            <br />
+            <span class="price"> $120-$160 </span>
+          </p>
+          <p>
+            Advanced Interior: <br />
+            Includes the basic package and <br />
+            <br />
+            <span class="price"> $160-$200 </span>
+          </p>
+        </div>
+
+        <div class="card">
+          <img src="Images/full.jpg" alt="Full Detail" />
+          <h3>Full Detail</h3>
+          <p>
+            Basic Full Detail: <br />
+            Includes all previously listed basic benefits for a discounted price
+            <br />
+            <br />
+            <span class="price"> $180-$220 </span>
+          </p>
+          <p>
+            Advanced Full Detail: <br />
+            Includes all previously listed advanced benefits for a discounted
+            price <br />
+            <br />
+            <span class="price"> $250-$300 </span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Why Choose Us</h2>
+      <p>
+        ✔ We come to you<br />
+        ✔ Professional equipment<br />
+        ✔ Affordable pricing<br />
+        ✔ Satisfaction guaranteed
+      </p>
+    </section>
+
+    <section class="section" id="quote">
+      <h2>Get a Free Quote</h2>
+
+      <form
+        class="form"
+        action="https://formsubmit.co/bjtfff1205@gmail.com"
+        method="POST"
+      >
+        <input type="text" name="Name" placeholder="Your Name" required />
+        <input type="text" name="Vehicle" placeholder="Make and Model of Vehicle" required />
+        <input type="tel" name="Phone" placeholder="Phone Number" required />
+        <input type="text" name="Location" placeholder="Location" required />
+        <select name="Service" id="service">
+          <option value="Basic Interior">Basic Interior</option>
+          <option value="Basic Exterior">Basic Exterior</option>
+          <option value="Basic Full">Basic Full</option>
+          <option value="Advanced Interior">Advanced Interior</option>
+          <option value="Advanced Exterior">Advanced Exterior</option>
+          <option value="Advanced Full">Advanced Full</option>
+        </select>
+
+        <input type="hidden" name="_subject" value="New Detailing Lead!" />
+        <input type="hidden" name="_captcha" value="false" />
+
+        <br />
+
+        <button class="btn">Submit</button>
+      </form>
+    </section>
+
+    <footer>
+      <div class="footer">
+        <div class="social">
+          <h3>Socials</h3>
+          <p><a href="https://www.facebook.com">Facebook</a></p>
+          <p><a href="https://www.instagram.com">Instagram</a></p>
+          <p><a href="https://www.tiktok.com">TikTok</a></p>
+        </div>
+        <div class="contact">
+            <h3>Contact Info</h3>
+            <p>Phone: 555-555-5555</p>
+            <P>Email: detail@gmail.com</P>
+        </div>
+      </div>
+      © 2026 Theis Auto Detailing | Mobile Detailing
+    </footer>
+
+    <script>
+      function scrollToQuote() {
+        document.getElementById("quote").scrollIntoView({ behavior: "smooth" });
+      }
+    </script>
+  </body>
+</html>
